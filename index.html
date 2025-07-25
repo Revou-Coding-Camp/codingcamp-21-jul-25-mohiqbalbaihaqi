@@ -6,18 +6,100 @@
 
     <!-- css -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- tailwind css -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <title>Simple To-Do List</title>
   </head>
-  <body>
-    <header>
-      <!-- title Todo List -->
-      <!-- end title -->
-    </header>
-    <main>
-      <!-- form -->
-      <!-- end form -->
-    </main>
-    <footer></footer>
+  <body class="flex flex-col bg-gray-100 min-h-screen">
+    <div class="flex flex-1 flex-col justify-center items-center">
+      <header class="flex justify-center mb-3">
+        <!-- title Todo List -->
+        <h1 class="font-semibold text-4xl text-gray-600">To Do List App</h1>
+        <!-- end title -->
+      </header>
+      <main
+        class="bg-white shadow-lg py-5 px-3 mx-4 mb-3 w-[90%] sm:max-w-[40%] rounded-lg"
+      >
+        <!-- form -->
+        <section class="my-2">
+          <form action="" class="flex flex-col sm:flex-row sm:gap-2">
+            <!-- input Task -->
+            <input
+              type="text"
+              id="input-task"
+              class="border rounded-lg p-2 mb-2 sm:mb-0 w-full"
+              placeholder="Type your task here..."
+            />
+            <input
+              type="date"
+              id="input-date"
+              name=""
+              id=""
+              class="border rounded-lg p-2 mb-2 sm:mb-0 w-full"
+            />
+            <button
+              type="button"
+              class="addBtn bg-blue-400 py-2 px-5 rounded-lg text-xl font-bold"
+            >
+              +
+            </button>
+            <!-- end task Input -->
+          </form>
+        </section>
+        <!-- end form -->
+
+        <!-- toggle Button -->
+        <section class="flex justify-between my-3">
+          <div>
+            <select name="" id="status-selected" class="border rounded-lg p-2">
+              <option value="All">All</option>
+              <option value="Pending">Pending</option>
+              <option value="Done">Done</option>
+            </select>
+            <button
+              type="button"
+              class="filter-btn bg-gray-400 p-3 rounded-lg font-semibold"
+            >
+              Filter
+            </button>
+          </div>
+          <button
+            type="button"
+            class="delete-all-btn bg-red-500 p-3 rounded-lg font-semibold"
+          >
+            Delete All
+          </button>
+        </section>
+        <!-- end toggle Button -->
+
+        <!-- task Display -->
+        <section class="bg-gray-100 my-3 p-2 rounded-lg">
+          <table class="w-full">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="4" class="text-center text-base sm:text-xl p-5">
+                  Task Not Found!
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <!-- end task Display -->
+      </main>
+    </div>
+    <footer class="bg-white p-5 shadow-lg w-full text-center">
+      <p>©2025 Mi. Bhq</p>
+    </footer>
 
     <!-- js -->
     <script src="js/script.js"></script>
